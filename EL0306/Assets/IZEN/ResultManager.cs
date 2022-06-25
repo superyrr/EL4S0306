@@ -52,6 +52,7 @@ public class ResultManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            Score.score = 0;
             if (m_GameMode)
             {
                 SceneManager.LoadScene(m_TitleSceneName);
