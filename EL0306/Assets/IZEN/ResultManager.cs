@@ -66,11 +66,12 @@ public class ResultManager : MonoBehaviour
             m_FloorImage.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Score.score = 0;
             if (m_GameMode)
             {
+                GameMode.mode = 0;
                 SceneManager.LoadScene(m_TitleSceneName);
             }
             else
