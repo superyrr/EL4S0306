@@ -416,6 +416,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 127509200}
+    - target: {fileID: 8874586156700952116, guid: 7e455ff6a5925f04fabb16e2a50fbec2, type: 3}
+      propertyPath: m_P1p2_change
+      value: 
+      objectReference: {fileID: 1184465409}
     - target: {fileID: 8874586156700952117, guid: 7e455ff6a5925f04fabb16e2a50fbec2, type: 3}
       propertyPath: multiOnly.Array.size
       value: 3
