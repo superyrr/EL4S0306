@@ -962,6 +962,10 @@ PrefabInstance:
       propertyPath: m_TitleSceneName
       value: Title
       objectReference: {fileID: 0}
+    - target: {fileID: 4853282093702880888, guid: 93ded0c3ff428cc46a3aab48019deb8b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c168f1f176f1234d9c83c78fa27d92c, type: 3}
     - target: {fileID: 8355517519949222411, guid: 93ded0c3ff428cc46a3aab48019deb8b, type: 3}
       propertyPath: m_RootOrder
       value: 4
