@@ -28,9 +28,7 @@ public class Generator : MonoBehaviour
 
     public void Next()
     {
-        Debug.Log($"next{m_NextId}");
-
-        m_CurrentFont = Instantiate(m_FontPrefab.gameObject, transform).GetComponent<FontObject>();
+        m_CurrentFont = Instantiate(m_FontPrefab.gameObject, transform.position, Quaternion.identity).GetComponent<FontObject>();
         m_CurrentFontRigidbody = m_CurrentFont.gameObject.GetComponent<Rigidbody2D>();
 
         m_CurrentFont.SetSprite(m_NextId);
@@ -44,7 +42,7 @@ public class Generator : MonoBehaviour
     {
         if (m_CurrentFont.transform.position.y + m_Distance > transform.position.y)
         {
-            transform.position.SetY(m_CurrentFont.transform.position.y + m_Distance);
+            transform.position = new Vector3(transform.position.x, m_CurrentFont.transform.position.y + m_Distance, transform.position.z);
         }
 
         Score.score++;
@@ -79,7 +77,6 @@ public class Generator : MonoBehaviour
             m_CurrentFontRigidbody.velocity.sqrMagnitude <= 0.01f * 0.01f &&
             m_CurrentFont.transform.position.y <= transform.position.y - 1.0f)
         {
-            Debug.Log("stop");
             OnFontStop();
         }
     }
