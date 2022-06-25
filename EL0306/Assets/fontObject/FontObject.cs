@@ -42,10 +42,10 @@ public class FontObject : MonoBehaviour
         {
             case 0:
             case 2:
-                Scale = 10;
+                Scale = 12;
                 break;
             case 3:
-                Scale = 23;
+                Scale = 26;
                 break;
             case 1:
                 Scale = 6;
