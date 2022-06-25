@@ -966,6 +966,10 @@ PrefabInstance:
       propertyPath: m_MultiPlaySceneName
       value: MyScene
       objectReference: {fileID: 0}
+    - target: {fileID: 4015712268290532623, guid: 3db999f77ee7aa5418158ac9dc98c0c5, type: 3}
+      propertyPath: m_SinglePlaySceneName
+      value: MyScene
+      objectReference: {fileID: 0}
     - target: {fileID: 4279147765474721373, guid: 3db999f77ee7aa5418158ac9dc98c0c5, type: 3}
       propertyPath: m_RootOrder
       value: 4

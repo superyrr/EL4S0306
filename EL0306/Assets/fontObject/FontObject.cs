@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class FontObject : MonoBehaviour
 {
-    // “c“‡’Ç‰Á
+    // ç”°å³¶è¿½åŠ 
     public phase Phaze => m_Phase;
 
     public enum phase
     {
+        phase_dissolve,
         phase_move,
         phase_fall
     }
     private phase m_Phase = phase.phase_move;
+    private float m_DissTime = 0;
     [SerializeField]
     private float m_RotateSpeed = 20;
     [SerializeField]
     private float m_MoveSpeed = 20;
     [SerializeField]
     private float m_FallSpeed;
-
+    [SerializeField]
+    private GameObject[] m_Effect;
     private Rigidbody2D m_Rb;
     [SerializeField]
     public Sprite[] m_SpriteArray;
@@ -30,6 +33,30 @@ public class FontObject : MonoBehaviour
         m_Rb = GetComponent<Rigidbody2D>();
         m_Rb.gravityScale = 0;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    void Start()
+    {
+        int id = Random.Range(0, 4);
+        int Scale = 1;
+        switch (id)
+        {
+            case 0:
+            case 2:
+                Scale = 10;
+                break;
+            case 3:
+                Scale = 23;
+                break;
+            case 1:
+                Scale = 6;
+                break;
+        }
+        var effect = Instantiate(m_Effect[id], transform);
+        effect.transform.position += new Vector3(0, 0, -0.1f);
+        effect.transform.localScale = new Vector3(Scale, Scale, Scale);
+        effect.transform.parent = null;
+        m_Phase = phase.phase_dissolve;
+        m_DissTime = 0.0f;
     }
     public int GetArrayNumber()
     {
@@ -43,8 +70,42 @@ public class FontObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if(Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    int id = Random.Range(0, 4);
+        //    int Scale = 1;
+        //    switch(id)
+        //    {
+        //        case 0:
+        //        case 2:
+        //            Scale = 10;
+        //            break;
+        //        case 3:
+        //            Scale = 23;
+        //            break;
+        //        case 1:
+        //            Scale = 6;
+        //            break;
+        //    }
+        //    var effect = Instantiate(m_Effect[id], transform);
+        //    effect.transform.position += new Vector3(0, 0, -0.1f);
+        //    effect.transform.localScale = new Vector3(Scale, Scale, Scale);
+        //    effect.transform.parent = null;
+        //    m_Phase = phase.phase_dissolve;
+        //    m_DissTime = 0.0f;
+        //}
         switch(m_Phase)
         {
+            case phase.phase_dissolve:
+                m_DissTime += Time.deltaTime;
+                if (m_DissTime >= 0.2f)
+                {
+                    m_DissTime = 0.2f;
+                    m_Phase = phase.phase_move;
+                }
+                transform.localScale = new Vector3(m_DissTime * 5, m_DissTime * 5, m_DissTime * 5);
+                
+                break;
             case phase.phase_move:
                 if (Input.GetKey(KeyCode.R))
                 {
@@ -65,11 +126,11 @@ public class FontObject : MonoBehaviour
                 }
                 break;
             case phase.phase_fall:
-                if(m_Rb.velocity.y<-1)
+                if (m_Rb.velocity.y < -m_FallSpeed)
                 {
                     m_Rb.gravityScale = 0;
                 }
-                else if(m_Rb.velocity.y>-0.5)
+                else if (m_Rb.velocity.y > -m_FallSpeed + 0.1f) 
                 {
                     m_Rb.gravityScale = 1;
                 }
