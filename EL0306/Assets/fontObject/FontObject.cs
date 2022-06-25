@@ -29,6 +29,10 @@ public class FontObject : MonoBehaviour
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         SetSprite(Random.Range(0,40));
     }
+    public int GetArrayNumber()
+    {
+        return m_SpriteArray.Length;
+    }
     public void SetSprite(int ID)
     {
         m_SpriteRenderer.sprite = m_SpriteArray[ID];
