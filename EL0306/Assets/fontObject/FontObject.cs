@@ -27,7 +27,7 @@ public class FontObject : MonoBehaviour
         m_Rb = GetComponent<Rigidbody2D>();
         m_Rb.gravityScale = 0;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        SetSprite(1);
+        //SetSprite(Random.Range(0,40));
     }
     public void SetSprite(int ID)
     {
