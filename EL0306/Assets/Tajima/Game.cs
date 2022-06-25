@@ -31,9 +31,12 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
-        foreach (var obj in multiOnly)
+        if (GameMode.mode == 0)
         {
-            obj.SetActive(false);
+            foreach (var obj in multiOnly)
+            {
+                obj.SetActive(false);
+            }
         }
     }
 

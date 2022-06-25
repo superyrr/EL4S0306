@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
     {
         if (transform.position.y < m_Generator.position.y)
         {
-            transform.position.SetY(Mathf.Min(transform.position.y + m_Speed, m_Generator.position.y - m_Distance));
+            transform.position = new Vector3(transform.position.x, Mathf.Min(transform.position.y + m_Speed, m_Generator.position.y - m_Distance), transform.position.z);
         }
     }
 }
