@@ -18,13 +18,22 @@ public class FontObject : MonoBehaviour
     private float m_FallSpeed;
 
     private Rigidbody2D m_Rb;
+    [SerializeField]
+    private Sprite[] m_SpriteArray;
+    private SpriteRenderer m_SpriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         m_Rb = GetComponent<Rigidbody2D>();
         m_Rb.gravityScale = 0;
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        SetSprite(1);
     }
-
+    public void SetSprite(int ID)
+    {
+        m_SpriteRenderer.sprite = m_SpriteArray[ID];
+        gameObject.AddComponent<PolygonCollider2D>();
+    }
     // Update is called once per frame
     void Update()
     {
