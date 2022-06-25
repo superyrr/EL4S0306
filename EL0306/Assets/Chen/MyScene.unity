@@ -982,6 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1p2: 1
   _P: {fileID: 2045041037}
+  SP_Render: {fileID: 2067126568}
 --- !u!4 &1184465410
 Transform:
   m_ObjectHideFlags: 0
