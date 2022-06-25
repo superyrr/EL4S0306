@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class FontObject : MonoBehaviour
 {
-    enum phase
+    // “c“‡’Ç‰Á
+    public phase Phaze => m_Phase;
+
+    public enum phase
     {
         phase_move,
         phase_fall
@@ -18,13 +21,26 @@ public class FontObject : MonoBehaviour
     private float m_FallSpeed;
 
     private Rigidbody2D m_Rb;
+    [SerializeField]
+    private Sprite[] m_SpriteArray;
+    private SpriteRenderer m_SpriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         m_Rb = GetComponent<Rigidbody2D>();
         m_Rb.gravityScale = 0;
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        SetSprite(Random.Range(0,40));
     }
-
+    public int GetArrayNumber()
+    {
+        return m_SpriteArray.Length;
+    }
+    public void SetSprite(int ID)
+    {
+        m_SpriteRenderer.sprite = m_SpriteArray[ID];
+        gameObject.AddComponent<PolygonCollider2D>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -50,6 +66,14 @@ public class FontObject : MonoBehaviour
                 }
                 break;
             case phase.phase_fall:
+                if(m_Rb.velocity.y<-1)
+                {
+                    m_Rb.gravityScale = 0;
+                }
+                else if(m_Rb.velocity.y>-0.5)
+                {
+                    m_Rb.gravityScale = 1;
+                }
                 break;
         }
     }
