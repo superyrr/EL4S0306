@@ -453,7 +453,7 @@ RectTransform:
   m_GameObject: {fileID: 648853988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1476276058}
@@ -962,6 +962,10 @@ PrefabInstance:
       propertyPath: m_Button2Image
       value: 
       objectReference: {fileID: 814356926}
+    - target: {fileID: 4015712268290532623, guid: 3db999f77ee7aa5418158ac9dc98c0c5, type: 3}
+      propertyPath: m_MultiPlaySceneName
+      value: MyScene
+      objectReference: {fileID: 0}
     - target: {fileID: 4279147765474721373, guid: 3db999f77ee7aa5418158ac9dc98c0c5, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1035,7 +1039,7 @@ RectTransform:
   m_GameObject: {fileID: 1814992770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1476276058}

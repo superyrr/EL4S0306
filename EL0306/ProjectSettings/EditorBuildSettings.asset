@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/IZEN/Title.unity
     guid: 16f2663894a679e48b542b7b32cb00cc
   - enabled: 1
+    path: Assets/Chen/MyScene.unity
+    guid: cc2486d07bf8f3c46ae9a31e471fd009
+  - enabled: 1
     path: Assets/IZEN/Result.unity
     guid: 4790135ae4a27f847b41bfc22e9564f5
   m_configObjects: {}
