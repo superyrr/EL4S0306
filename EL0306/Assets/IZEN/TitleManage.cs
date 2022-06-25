@@ -12,6 +12,7 @@ public class TitleManage : MonoBehaviour
     {
         State_ClickAny,
         State_ModeSelect,
+        State_Start,
         State_Max,
     }
     [SerializeField]
@@ -30,6 +31,12 @@ public class TitleManage : MonoBehaviour
     private Image m_Button2Image;
     [SerializeField]
     private Image m_ClickImage;
+    [SerializeField]
+    private GameObject m_StartAudio;
+    [SerializeField]
+    private GameObject m_DecisionAudio;
+
+    private float m_Timer;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +64,7 @@ public class TitleManage : MonoBehaviour
                     m_FloorImage.enabled = true;
                     m_Button1Image.enabled = true;
                     m_Button2Image.enabled = true;
+                    m_DecisionAudio.GetComponent<AudioSource>().Play();
                 }
                 break;
 
@@ -78,7 +86,20 @@ public class TitleManage : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    if(m_GameMode)
+                    m_StartAudio.GetComponent<AudioSource>().Play();
+                    m_Timer = Time.time;
+                    m_TitleState = TitleState.State_Start;
+                   
+                  
+                }
+
+                break;
+
+            case TitleState.State_Start:
+
+                if(Time.time - m_Timer> 2.0)
+                {
+                    if (m_GameMode)
                     {
                         SceneManager.LoadScene(m_MultiPlaySceneName);
                     }
@@ -86,9 +107,8 @@ public class TitleManage : MonoBehaviour
                     {
                         SceneManager.LoadScene(m_SinglePlaySceneName);
                     }
-                    
                 }
-
+               
                 break;
         }
     }
