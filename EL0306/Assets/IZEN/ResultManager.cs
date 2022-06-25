@@ -17,6 +17,10 @@ public class ResultManager : MonoBehaviour
 
     [SerializeField]
     private Text m_Score;
+    [SerializeField]
+    private Text m_MultiScore;
+    [SerializeField]
+    private Text m_MultiWinner;
 
     private bool m_GameMode;
     [SerializeField]
@@ -31,6 +35,18 @@ public class ResultManager : MonoBehaviour
         m_Floor2Image.enabled = false;
 
         m_Score.text = Score.score.ToString();
+        m_MultiScore.text = Score.score.ToString();
+        m_MultiWinner.text = "WIN P" + GameMode.winner.ToString();
+
+        if (GameMode.mode == 0)
+        {
+            m_MultiScore.enabled = false;
+            m_MultiWinner.enabled = false;
+        }
+        else
+        {
+            m_Score.enabled = false;
+        }
     }
 
     // Update is called once per frame

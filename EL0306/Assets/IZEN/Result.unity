@@ -1117,9 +1117,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 624060013}
     - target: {fileID: 2720260756696653410, guid: 93ded0c3ff428cc46a3aab48019deb8b, type: 3}
+      propertyPath: m_MultiScore
+      value: 
+      objectReference: {fileID: 1448670578}
+    - target: {fileID: 2720260756696653410, guid: 93ded0c3ff428cc46a3aab48019deb8b, type: 3}
       propertyPath: m_Floor2Image
       value: 
       objectReference: {fileID: 2108230373}
+    - target: {fileID: 2720260756696653410, guid: 93ded0c3ff428cc46a3aab48019deb8b, type: 3}
+      propertyPath: m_MultiWinner
+      value: 
+      objectReference: {fileID: 1054011382}
     - target: {fileID: 2720260756696653410, guid: 93ded0c3ff428cc46a3aab48019deb8b, type: 3}
       propertyPath: m_TitleSceneName
       value: Title

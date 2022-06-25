@@ -101,10 +101,12 @@ public class TitleManage : MonoBehaviour
                 {
                     if (m_GameMode)
                     {
+                        GameMode.mode = 1;
                         SceneManager.LoadScene(m_MultiPlaySceneName);
                     }
                     else
                     {
+                        GameMode.mode = 0;
                         SceneManager.LoadScene(m_SinglePlaySceneName);
                     }
                 }
