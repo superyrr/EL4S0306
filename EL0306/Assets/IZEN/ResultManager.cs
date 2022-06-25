@@ -30,7 +30,7 @@ public class ResultManager : MonoBehaviour
         m_GameMode = false;
         m_Floor2Image.enabled = false;
 
-        m_Score.text = "002";
+        m_Score.text = Score.score.ToString();
     }
 
     // Update is called once per frame
