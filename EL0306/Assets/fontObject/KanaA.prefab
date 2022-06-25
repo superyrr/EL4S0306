@@ -121,7 +121,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RotateSpeed: 150
   m_MoveSpeed: 5
-  m_FallSpeed: 0
+  m_FallSpeed: 2
+  m_Effect:
+  - {fileID: 7226583673155636401, guid: a2ab56839e1c9504ea9d141e95d0b16b, type: 3}
+  - {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
+  - {fileID: 2955623459812423943, guid: f5507a8c6a22c404ab324980c4e8a11b, type: 3}
+  - {fileID: 8443315704496310910, guid: 6ef35fa36e3a65043b2d800600204bdd, type: 3}
   m_SpriteArray:
   - {fileID: 21300000, guid: f1eff7e54ed4b22418558e7667b64164, type: 3}
   - {fileID: 21300000, guid: a51befc9c22a05946a54c898187bd048, type: 3}
