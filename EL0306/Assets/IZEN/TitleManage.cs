@@ -84,7 +84,7 @@ public class TitleManage : MonoBehaviour
                     m_FloorImage.enabled = false;
                 }
 
-                if (Input.GetKeyDown(KeyCode.Return))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     m_StartAudio.GetComponent<AudioSource>().Play();
                     m_Timer = Time.time;
