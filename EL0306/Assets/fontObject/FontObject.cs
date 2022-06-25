@@ -27,7 +27,7 @@ public class FontObject : MonoBehaviour
         m_Rb = GetComponent<Rigidbody2D>();
         m_Rb.gravityScale = 0;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        //SetSprite(Random.Range(0,40));
+        SetSprite(Random.Range(0,40));
     }
     public void SetSprite(int ID)
     {
@@ -59,6 +59,14 @@ public class FontObject : MonoBehaviour
                 }
                 break;
             case phase.phase_fall:
+                if(m_Rb.velocity.y<-1)
+                {
+                    m_Rb.gravityScale = 0;
+                }
+                else if(m_Rb.velocity.y>-0.5)
+                {
+                    m_Rb.gravityScale = 1;
+                }
                 break;
         }
     }
