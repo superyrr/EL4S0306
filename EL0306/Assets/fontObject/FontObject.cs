@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class FontObject : MonoBehaviour
 {
-    enum phase
+    // “c“‡’Ç‰Á
+    public phase Phaze => m_Phase;
+
+    public enum phase
     {
         phase_move,
         phase_fall
