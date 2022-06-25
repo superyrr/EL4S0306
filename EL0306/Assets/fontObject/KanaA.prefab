@@ -100,7 +100,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: a459a09cd3c9f9442a0d4a17dafd92b2, type: 2}
   m_Interpolate: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb9d6255b774ee428c3251eed606578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RotateSpeed: 35
-  m_MoveSpeed: 10
+  m_RotateSpeed: 150
+  m_MoveSpeed: 5
   m_FallSpeed: 0
   m_SpriteArray:
   - {fileID: 21300000, guid: f1eff7e54ed4b22418558e7667b64164, type: 3}

@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
         // オブジェクトからTextコンポーネントを取得
         TextMeshProUGUI score_text = score_object.GetComponent<TextMeshProUGUI>();
         // テキストの表示を入れ替える
+        C_Count = Score.score;
         S_Count = C_Count.ToString();
         score_text.SetText(S_Count);
     }

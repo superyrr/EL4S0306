@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
     {
         Debug.Log("start");
 
-        Score.score = 0.0f;
+        Score.score = 0;
 
         generator.Next();
     }

@@ -22,15 +22,14 @@ public class FontObject : MonoBehaviour
 
     private Rigidbody2D m_Rb;
     [SerializeField]
-    private Sprite[] m_SpriteArray;
+    public Sprite[] m_SpriteArray;
     private SpriteRenderer m_SpriteRenderer;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         m_Rb = GetComponent<Rigidbody2D>();
         m_Rb.gravityScale = 0;
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
-        SetSprite(Random.Range(0,40));
     }
     public int GetArrayNumber()
     {
