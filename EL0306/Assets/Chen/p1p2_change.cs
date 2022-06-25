@@ -29,13 +29,15 @@ public class p1p2_change : MonoBehaviour
 
         if (p1p2 == 1)
         {
+            score_text.color = new Color32(255, 97, 83, 255);
             score_text.SetText("1P");
-            score_text.color = new Color(222, 41, 22, 255);
+            
         }
         if (p1p2 == 2)
         {
+            score_text.color = new Color32(139, 180, 255, 255);
             score_text.SetText("2P");
-            score_text.color = new Color(41, 222, 22, 255);
+            
         }
 
 
