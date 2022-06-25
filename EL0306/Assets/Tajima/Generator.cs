@@ -13,6 +13,8 @@ public class Generator : MonoBehaviour
     [SerializeField]
     public C_50on m_C_50On;
     [SerializeField]
+    public p1p2_change m_P1p2_change;
+    [SerializeField]
     public float m_Interval = 0.5f;
     [SerializeField]
     public float m_Distance = 2.0f;
@@ -46,6 +48,8 @@ public class Generator : MonoBehaviour
         }
 
         Score.score++;
+
+        m_P1p2_change.p1p2 = m_P1p2_change.p1p2 % 2 + 1;
 
         m_NextGenCount = m_Interval;
     }

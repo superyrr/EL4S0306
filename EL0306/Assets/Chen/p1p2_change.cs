@@ -49,4 +49,9 @@ public class p1p2_change : MonoBehaviour
 
 
     }
+
+    private void OnDestroy()
+    {
+        GameMode.winner = p1p2 % 2 + 1;
+    }
 }
