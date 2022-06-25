@@ -45,6 +45,8 @@ public class Generator : MonoBehaviour
             transform.position.SetY(m_CurrentFont.transform.position.y + m_Distance);
         }
 
+        Score.score++;
+
         m_NextGenCount = m_Interval;
     }
 
