@@ -7,6 +7,8 @@ public class Game : MonoBehaviour
     [SerializeField]
     private Generator generator;
 
+    private bool m_GameOver = false;
+
     public void GameStart()
     {
         Debug.Log("start");
@@ -18,7 +20,12 @@ public class Game : MonoBehaviour
 
     public void GameOver()
     {
+        if (m_GameOver)
+            return;
+
         Debug.Log("over");
+
+        m_GameOver = true;
     }
 
     private void Start()
